@@ -77,6 +77,8 @@ var asn1Builder = require('asn1');
 let _caProto = grpc.load(__dirname + "/protos/ca.proto").protos;
 let _fabricProto = grpc.load(__dirname + "/protos/fabric.proto").protos;
 let _chaincodeProto = grpc.load(__dirname + "/protos/chaincode.proto").protos;
+let _timestampProto = grpc.load(__dirname + "/protos/google/protobuf/timestamp.proto".google.protobuf.Timestamp)
+
 let net = require('net');
 
 let DEFAULT_SECURITY_LEVEL = 256;
@@ -399,6 +401,7 @@ export interface TransactionProtobuf {
     setNonce(nonce:Buffer):void;
     setToValidators(Buffer):void;
     getTxid():string;
+    getTimestamp(): _timestampProto.Timestamp;
     getChaincodeID():{buffer: Buffer};
     setChaincodeID(buffer:Buffer):void;
     getMetadata():{buffer: Buffer};
