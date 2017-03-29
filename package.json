@@ -7,9 +7,9 @@
     "hyperledger",
     "blockchain"
   ],
-  "bin": "./bin/main.js",
+  "bin": "sdk/bin/main.js",
   "typings": "hfc.d.ts",
-  "main": "index.js",
+  "main": "sdk/index.js",
   "repository": {
     "type": "github",
     "url": "https://github.com/hyperledger/fabric"
